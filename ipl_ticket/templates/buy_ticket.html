@@ -1,0 +1,281 @@
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Buy Ticket</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f0f8ff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 500px;
+            margin: 50px auto;
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        label {
+            font-weight: bold;
+        }
+        .info, .input-group {
+            margin-bottom: 15px;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .back-link {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .error {
+            color: red;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Confirm Ticket Booking</h2>
+
+        {% if error %}
+            <div class="error">{{ error }}</div>
+        {% endif %}
+
+        <div class="info"><label>User:</label> {{ user[1] }}</div>
+        <div class="info"><label>Email:</label> {{ user[3] }}</div>
+        <div class="info"><label>Phone:</label> {{ user[2] }}</div>
+
+        <div class="info"><label>Match:</label> {{ ticket[5] }} vs {{ ticket[6] }}</div>
+        <div class="info"><label>Match Date:</label> {{ ticket[4] }}</div>
+        <div class="info"><label>Seat No:</label> {{ ticket[1] }}</div>
+        <div class="info"><label>Price:</label> ₹{{ ticket[2] }}</div>
+
+        <form method="POST">
+            <div class="input-group">
+                <label for="card_number">Credit Card Number:</label>
+                <input type="text" name="card_number" maxlength="16" required>
+            </div>
+            <div class="input-group">
+                <label for="card_name">Cardholder Name:</label>
+                <input type="text" name="card_name" required>
+            </div>
+            <div class="input-group">
+                <label for="expiry">Expiry Date:</label>
+                <input type="month" name="expiry" required>
+            </div>
+            <div class="input-group">
+                <label for="cvv">CVV:</label>
+                <input type="password" name="cvv" maxlength="4" required>
+            </div>
+            <div class="input-group">
+                <label for="otp">Enter OTP:</label>
+                <input type="text" name="otp" maxlength="6" required>
+            </div>
+            <div class="input-group">
+                <label for="payment_status">Select Payment Status:</label>
+                <select name="payment_status" required>
+                    <option value="">--Select--</option> -->
+                    <!-- <option value="pending">Pending</option> -->
+                    <!-- <option value="success">Success</option>
+                </select>
+            </div>
+            <button type="submit">Confirm Booking</button>
+        </form>
+
+        <a href="/view_tickets" class="back-link">← Back to Available Tickets</a>
+    </div>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Buy Ticket</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0077ff, #00c4ff);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 550px;
+            margin: 60px auto;
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 35px 40px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+
+        label {
+            font-weight: 600;
+            color: #222;
+        }
+
+        .info, .input-group {
+            margin-bottom: 20px;
+        }
+
+        .info {
+            background-color: #f7f7f7;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border-left: 4px solid #0077ff;
+        }
+
+        .info label {
+            display: inline-block;
+            width: 120px;
+            color: #555;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px 14px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            transition: 0.2s;
+        }
+
+        input:focus, select:focus {
+            border-color: #0077ff;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            background-color: #0077ff;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #005dc1;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 25px;
+            color: #0077ff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .back-link:hover {
+            color: #005dc1;
+        }
+
+        .error {
+            color: #d9534f;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                margin: 30px 15px;
+                padding: 25px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Confirm Ticket Booking</h2>
+
+        {% if error %}
+            <div class="error">{{ error }}</div>
+        {% endif %}
+
+        <div class="info"><label>User:</label> {{ user[1] }}</div>
+        <div class="info"><label>Email:</label> {{ user[3] }}</div>
+        <div class="info"><label>Phone:</label> {{ user[2] }}</div>
+
+        <div class="info"><label>Match:</label> {{ ticket[5] }} vs {{ ticket[6] }}</div>
+        <div class="info"><label>Date:</label> {{ ticket[4] }}</div>
+        <div class="info"><label>Stand No:</label> {{ ticket[1] }}</div>
+        <div class="info"><label>Price:</label> ₹{{ ticket[2] }}</div>
+
+        <form method="POST">
+            <div class="input-group">
+                <label for="card_number">Credit Card Number</label>
+                <input type="text" name="card_number" maxlength="16" placeholder="Enter 16-digit number" required>
+            </div>
+            <div class="input-group">
+                <label for="card_name">Cardholder Name</label>
+                <input type="text" name="card_name" placeholder="As on card" required>
+            </div>
+            <div class="input-group">
+                <label for="expiry">Expiry Date</label>
+                <input type="month" name="expiry" required>
+            </div>
+            <div class="input-group">
+                <label for="cvv">CVV</label>
+                <input type="password" name="cvv" maxlength="4" placeholder="XXX" required>
+            </div>
+            <div class="input-group">
+                <label for="otp">Enter OTP</label>
+                <input type="text" name="otp" maxlength="6" placeholder="six digit otp" required>
+            </div>
+            <div class="input-group">
+                <label for="payment_status">Payment Status</label>
+                <select name="payment_status" required>
+                    <option value="">-- Select Status --</option>
+                    <option value="success">done</option>
+                </select>
+            </div>
+            <button type="submit">Confirm Booking</button>
+        </form>
+
+        <a href="/view_tickets" class="back-link">← Back to Available Tickets</a>
+    </div>
+</body>
+</html>
