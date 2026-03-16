@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IPL Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+
+        .dashboard-container {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 50px 40px;
+            border-radius: 16px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 100%;
+            max-width: 450px;
+            color: #222;
+            position: relative;
+        }
+
+        .dashboard-container::before {
+            content: "";
+            background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQW__LeJsnrSCy0twaCt-Mb8ew21k1ob41nZg&s');
+            background-size: 80px;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 80px;
+            height: 80px;
+            opacity: 0.2;
+        }
+
+        h2 {
+            margin-bottom: 30px;
+            font-weight: 600;
+            color: #0f3c6b;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            padding: 14px 20px;
+            background: linear-gradient(135deg, #2575fc, #6a11cb);
+            color: white;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: transform 0.2s ease, background 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-links a:hover {
+            background: linear-gradient(135deg, #1a5ed8, #5318c5);
+            transform: scale(1.03);
+        }
+
+        .logout {
+            background: #dc3545;
+        }
+
+        .logout:hover {
+            background: #b52a37;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <h2>Welcome, {{ username }}!</h2>
+        <div class="nav-links">
+            <a href="/teams">🏏 View Teams</a>
+            <a href="/view_stadiums">🏟️ View Stadiums</a>
+            <a href="/view_matches">📅 View Matches</a>
+            <a href="/view_tickets">🎟️ Available Tickets</a>
+            <a href="/orders">🧾 booked tickets</a>
+            <a href="/logout" class="logout">🚪 Logout</a>
+        </div>
+    </div>
+</body>
+</html>
