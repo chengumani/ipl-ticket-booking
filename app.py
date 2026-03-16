@@ -12,11 +12,11 @@ app.secret_key = '1234'
 
 # MySQL connection
 db = mysql.connector.connect(
-    host="mysql.railway.internal",
+    host="ballast.proxy.rlwy.net",
     user="root",
     password="cvjzYOKHKcYMvEdUHzDbqUCrFdbnHATn",
     database="railway",
-    port=3306
+    port=28213
     
 )
 
