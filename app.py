@@ -12,10 +12,11 @@ app.secret_key = '1234'
 
 # MySQL connection
 db = mysql.connector.connect(
-    host="localhost",
+    host="mysql.railway.internal",
     user="root",
-    password="root1234",
-    database="ipl_ticket_booking"
+    password="cvjzYOKHKcYMvEdUHzDbqUCrFdbnHATn",
+    database="railway",
+    port=3306
     
 )
 
